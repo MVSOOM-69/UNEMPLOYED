@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Request a Service — UNEMPLOYED</title>
+
+    <meta name="description"
+          content="Send your requirements to UNEMPLOYED and let's get your project started.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================
+           REQUEST PAGE
+        ========================= */
+
+        .request-page {
+            min-height: 100vh;
+            padding: 150px 5% 100px;
+        }
+
+        .request-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 50px;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .request-heading {
+            margin-bottom: 60px;
+        }
+
+        .request-heading h1 {
+            font-size: clamp(55px, 8vw, 110px);
+            line-height: .88;
+            letter-spacing: -6px;
+            font-weight: 900;
+        }
+
+        .request-heading h1 span {
+            color: transparent;
+            -webkit-text-stroke: 2px #111;
+        }
+
+        .request-heading p {
+            margin-top: 25px;
+            max-width: 550px;
+
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .request-form {
+            background: #fff;
+            border: 1px solid #e4dfd4;
+            padding: clamp(25px, 5vw, 55px);
+        }
+
+        .form-section {
+            margin-bottom: 45px;
+        }
+
+        .form-section-title {
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .service-name {
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .service-description {
+            color: #666;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        /* Package choices */
+
+        .package-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .package-option {
+            position: relative;
+        }
+
+        .package-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .package-label {
+            display: block;
+
+            padding: 22px;
+
+            border: 1px solid #ddd;
+
+            cursor: pointer;
+
+            transition:
+                background .2s ease,
+                color .2s ease,
+                border-color .2s ease;
+        }
+
+        .package-label:hover {
+            border-color: #111;
+        }
+
+        .package-option input:checked + .package-label {
+            background: #111;
+            color: white;
+            border-color: #111;
+        }
+
+        .package-title {
+            display: block;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .package-price {
+            font-size: 13px;
+        }
+
+        /* Inputs */
+
+        .field {
+            margin-bottom: 25px;
+        }
+
+        .field label {
+            display: block;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            margin-bottom: 9px;
+        }
+
+        .field input,
+        .field textarea,
+        .field select {
+            width: 100%;
+
+            border: 1px solid #d8d3c9;
+
+            background: #f9f7f2;
+
+            color: #111;
+
+            padding: 15px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            outline: none;
+
+            border-radius: 0;
+
+            transition: border .2s ease;
+        }
+
+        .field textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .field input:focus,
+        .field textarea:focus,
+        .field select:focus {
+            border-color: #111;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Submit */
+
+        .submit-button {
+            width: 100%;
+
+            border: none;
+
+            background: #111;
+            color: white;
+
+            padding: 19px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: transform .2s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-note {
+            margin-top: 15px;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 11px;
+
+            line-height: 1.5;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .request-heading h1 {
+                letter-spacing: -3px;
+            }
+
+            .package-options {
+                grid-template-columns: 1fr;
+            }
+
+            .field-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        UNEMPLOYED
+    </a>
+
+    <nav>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#how-it-works">How it works</a>
+        <a href="index.html#about">About</a>
+    </nav>
+
+    <a href="index.html" class="nav-button">
+        Back home
+    </a>
+
+</header>
+
+
+<main class="request-page">
+
+    <div class="request-container">
+
+        <a href="index.html#services" class="back-link">
+            ← Back to services
+        </a>
+
+
+        <div class="request-heading">
+
+            <p class="eyebrow">
+                UNEMPLOYED / REQUEST
+            </p>
+
+            <h1>
+                LET'S MAKE<br>
+                <span>IT HAPPEN.</span>
+            </h1>
+
+            <p>
+                Tell us what you need. Give us as much information
+                as possible so we can understand your request.
+            </p>
+
+        </div>
+
+
+        <form id="requestForm" class="request-form">
+
+            <!-- SERVICE -->
+
+            <section class="form-section">
+
+                <div class="form-section-title">
+                    YOUR SERVICE
+                </div>
+
+                <div id="serviceName" class="service-name">
+                    Loading...
+                </div>
+
+                <div id="serviceDescription"
+                     class="service-description">
+                </div>
+
+            </section>
+
+
+            <!-- PRESENTATION PACKAGES -->
+
+            <section id="presentationPackages"
+                     class="form-section"
+                     style="display:none;">
+
+                <div class="form-section-title">
+                    CHOOSE YOUR PACKAGE
+                </div>
+
+                <div class="package-options">
+
+                    <div class="package-option">
+
+                        <input
+                            type="radio"
+                            name="package"
+                            id="package6"
+                            value="6-page presentation — ₹300"
+                        >
+
+                        <label
+                            for="package6"
+                            class="package-label">
+
+                            <span class="package-title">
+                                6 Pages
+                            </span>
+
+                            <span class="package-price">
+                                ₹300
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="package-option">
+
+                        <input
+                            type="radio"
+                            name="package"
+                            id="package10"
+                            value="10-page presentation — ₹500"
+                        >
+
+                        <label
+                            for="package10"
+                            class="package-label">
+
+                            <span class="package-title">
+                                10 Pages
+                            </span>
+
+                            <span class="package-price">
+                                ₹500
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="package-option">
+
+                        <input
+                            type="radio"
+                            name="package"
+                            id="packageMore"
+                            value="10+ page presentation — ₹700+"
+                        >
+
+                        <label
+                            for="packageMore"
+                            class="package-label">
+
+                            <span class="package-title">
+                                10+ Pages
+                            </span>
+
+                            <span class="package-price">
+                                ₹700+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROJECT INFORMATION -->
+
+            <section class="form-section">
+
+                <div class="form-section-title">
+                    PROJECT DETAILS
+                </div>
+
+
+                <div class="field">
+
+                    <label for="topic">
+                        What do you need?
+                    </label>
+
+                    <input
+                        type="text"
+                        id="topic"
+                        name="topic"
+                        placeholder="Example: Climate change presentation"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="requirements">
+                        Tell us your requirements
+                    </label>
+
+                    <textarea
+                        id="requirements"
+                        name="requirements"
+                        placeholder="Explain what you want us to make..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="references">
+                        References or extra information
+                    </label>
+
+                    <textarea
+                        id="references"
+                        name="references"
+                        placeholder="Anything else we should know? (Optional)"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="field-row">
+
+                    <div class="field">
+
+                        <label for="deadline">
+                            Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            id="deadline"
+                            name="deadline"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="name">
+                            Your name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+
+            <section class="form-section">
+
+                <div class="form-section-title">
+                    CONTACT
+                </div>
+
+
+                <div class="field">
+
+                    <label for="phone">
+                        Your WhatsApp number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+91 XXXXX XXXXX"
+                        required
+                    >
+
+                </div>
+
+            </section>
+
+
+            <button
+                type="submit"
+                class="submit-button">
+
+                SEND REQUEST ON WHATSAPP →
+
+            </button>
+
+
+            <p class="whatsapp-note">
+                When you submit this form, WhatsApp will open with
+                your request details already prepared. You can then
+                discuss the final price and payment with us.
+            </p>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /*
+        SERVICE DATA
+    */
+
+    const services = {
+
+        presentation: {
+            name: "Presentations",
+            description:
+                "Professional presentations made around your topic, requirements and preferred style."
+        },
+
+        letter: {
+            name: "Letters",
+            description:
+                "Applications, formal letters, personal letters and other written documents."
+        },
+
+        cv: {
+            name: "CV / Resume",
+            description:
+                "Clean and professional CVs and resumes designed around your goals."
+        },
+
+        design: {
+            name: "Design",
+            description:
+                "Posters, flyers, social media graphics and custom visual designs."
+        },
+
+        website: {
+            name: "Website",
+            description:
+                "Simple websites for individuals, projects and small businesses."
+        },
+
+        writing: {
+            name: "Writing",
+            description:
+                "Essays, documents, descriptions and other writing work."
+        }
+
+    };
+
+
+    /*
+        FIND SELECTED SERVICE
+    */
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const service =
+        params.get("service") || "other";
+
+
+    const serviceInfo =
+        services[service] || {
+            name: "Custom Request",
+            description:
+                "Tell us what you need and we'll discuss the details with you."
+        };
+
+
+    /*
+        DISPLAY SERVICE
+    */
+
+    document.getElementById("serviceName")
+        .textContent = serviceInfo.name;
+
+    document.getElementById("serviceDescription")
+        .textContent = serviceInfo.description;
+
+
+    /*
+        SHOW PRESENTATION PACKAGES
+    */
+
+    if (service === "presentation") {
+
+        document.getElementById("presentationPackages")
+            .style.display = "block";
+
+    }
+
+
+    /*
+        FORM SUBMISSION
+    */
+
+    const form =
+        document.getElementById("requestForm");
+
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const topic =
+            document.getElementById("topic").value.trim();
+
+        const requirements =
+            document.getElementById("requirements").value.trim();
+
+        const references =
+            document.getElementById("references").value.trim();
+
+        const deadline =
+            document.getElementById("deadline").value;
+
+
+        /*
+            PACKAGE
+        */
+
+        const packageInput =
+            document.querySelector(
+                'input[name="package"]:checked'
+            );
+
+        const selectedPackage =
+            packageInput
+                ? packageInput.value
+                : "Not specified";
+
+
+        /*
+            FORMAT WHATSAPP MESSAGE
+        */
+
+        let message =
+`*UNEMPLOYED — NEW REQUEST*
+
+*Service:* ${serviceInfo.name}
+*Package:* ${selectedPackage}
+
+*Customer:* ${name}
+*Customer WhatsApp:* ${phone}
+
+*What they need:*
+${topic}
+
+*Requirements:*
+${requirements}`;
+
+
+        if (references) {
+
+            message +=
+`\n\n*References / Extra Information:*
+${references}`;
+
+        }
+
+
+        if (deadline) {
+
+            message +=
+`\n\n*Deadline:*
+${deadline}`;
+
+        }
+
+
+        message +=
+`\n\nI would like to discuss the final price and details.`;
+
+
+        /*
+            YOUR WHATSAPP NUMBER
+
+            IMPORTANT:
+            Replace the number below with your WhatsApp
+            number WITHOUT + or spaces.
+
+            Example:
+            +91 98765 43210
+
+            becomes:
+            919876543210
+        */
+
+        const yourWhatsAppNumber =
+            "918755570211";
+
+
+        /*
+            CREATE WHATSAPP LINK
+        */
+
+        const whatsappURL =
+            "https://wa.me/" +
+            yourWhatsAppNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        /*
+            OPEN WHATSAPP
+        */
+
+        window.location.href = whatsappURL;
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
